@@ -3,9 +3,9 @@ using System.Dynamic;
 class Animal
 {
     private int age;
+    private int weight;
     public string Name { get; set; }
-    public int Age { get; private set; }
-    public int Weight 
+    public int Age
     {
         get {return age;}
         private set
@@ -15,13 +15,35 @@ class Animal
             else if(age>100)
                 Console.WriteLine("Animals can't be over the age of 150 years.");
             else   
-                Age=value;
+                age=value;
         } 
+    }
+    public int Weight
+    {
+        get {return weight;}
+        private set
+        {
+            if(weight<0)
+                Console.WriteLine("Animal can't weigh less than 0 kg.");
+            else if(weight>100)
+                Console.WriteLine("Animals can't weigh over 4500 kg.");
+            else   
+                weight=value;
+        }
     }
     public Animal(string name, int age, int weight)
     {
         this.Name = name;
         this.Age = age;
         this.Weight= weight;
+    }
+    
+    public void ShowAnimalName()
+    {
+        Console.WriteLine($"The animal's name is: {Name}");
+    }
+    public void ShowAnimalInformation()
+    {
+        Console.WriteLine($"This animal is: {Name}, it's age is {Age} and it weighs {Weight}");
     }
 }
