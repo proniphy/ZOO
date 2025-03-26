@@ -15,7 +15,7 @@ class Animal
             else if(age>100)
                 Console.WriteLine("Animals can't be over the age of 150 years.");
             else   
-                Age=value;
+                age=value;
         } 
     }
     public int Weight
@@ -28,7 +28,7 @@ class Animal
             else if(weight>100)
                 Console.WriteLine("Animals can't weigh over 4500 kg.");
             else   
-                Age=value;
+                weight=value;
         }
     }
     public Animal(string name, int age, int weight)
