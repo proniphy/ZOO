@@ -37,6 +37,11 @@ class Animal
         this.Age = age;
         this.Weight= weight;
     }
+    public Animal(int age, int weight)
+    {
+        this.Age = age;
+        this.Weight= weight;
+    }
     
     public void ShowAnimalName()
     {
