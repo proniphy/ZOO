@@ -7,6 +7,9 @@ class Program
     {
         
     }
+}
+static class Validator
+{
     public static int GetIntInput(string message) //Function to get Int, also checks for correct input
     { 
         int value; 
