@@ -7,4 +7,5 @@ class Animal
         this.Name = name;
         this.Age = age;
     }
+    Console.WriteLine("Hello");
 }
