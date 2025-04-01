@@ -31,4 +31,9 @@ class Mammal : Animal, ISpeciesInfo
     {
         base.ShowAnimalInformation();
     }
+
+    public void ShowMammalInformation()
+    {
+        Console.WriteLine($"{base.ShowAnimalInformation()}. It's from the {Habitat} habitat.");
+    }
 }
