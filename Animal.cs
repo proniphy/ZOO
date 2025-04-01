@@ -20,6 +20,11 @@ class Animal
         {
             throw new ArgumentOutOfRangeException("Weight cannot be negative");
         }
+        if (weightInKg > 200_000)
+        {
+            // Based on largest living animal, the Blue whale, which can reach 190 tons
+            throw new ArgumentOutOfRangeException("Weight cannot be larger than 200 tons");
+        }
 
         Name = name;
         BirthDate = birthDate;
