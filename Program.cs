@@ -225,19 +225,21 @@ class Program
             if (type == "exit") break;
 
             string name = GetStringInput("Enter animal's name: ");
-            int age = GetIntInput("Enter animal's age: ");
+            int birthYear = GetIntInput("Enter animal's birth year: ");
+            int birthMonth = GetIntInput("Enter animal's birth month (1-12): ");
             double weight = GetDoubleInput("Enter animal's weight: ");
 
+            var birthDate = new DateTime(birthYear, birthMonth, 1);
             if (type == "mammal")
             {
                 string habitat = GetStringInput("Enter animal's habitat: ");
-                Mammal mammal = new Mammal(name, age, weight, true, habitat);
+                Mammal mammal = new Mammal(name, birthDate, weight, true, habitat);
                 animalCatalog.AddMammal(mammal);
             }
             else if (type == "bird")
             {
                 bool flying = GetStringInput("Can the bird fly? (yes/no): ") == "yes";
-                Bird bird = new Bird(name, age, flying, weight);
+                Bird bird = new Bird(name, birthDate, weight, flying);
                 animalCatalog.AddBird(bird);
             }
             else
