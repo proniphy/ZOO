@@ -3,8 +3,8 @@ class Mammal : Animal
     public bool IsWarmBlooded {get; set; } = true; //Mammals are warm blooded
     public string? Habitat {get; set; } //living habitat of an animal
 
-    public Mammal (string? name, int age, double weight, bool isWarmBlooded, string? habitat)
-    : base(name, age, weight)
+    public Mammal(string name, DateTime birthDate, double weightInKg, bool isWarmBlooded, string? habitat)
+        : base(name, birthDate, weightInKg)
     {
         this.Habitat=habitat;
     }

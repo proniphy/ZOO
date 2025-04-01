@@ -2,48 +2,37 @@ using System.Dynamic;
 
 class Animal
 {
-    private int age;
-    private double weight;
-    public string Name { get; set; }
-    public int Age
+    public string Name { get; init; }
+
+    public DateTime BirthDate { get; init; }
+    public double Weight { get; init; }    // In kilograms
+
+    public int AgeInDays { get => (DateTime.Today - BirthDate).Days; }
+    public int AgeInYears { get => AgeInDays / 365; }
+
+    public Animal(string name, DateTime birthDate, double weightInKg)
     {
-        get {return age;}
-        private set
+        if (DateTime.Today < birthDate)
         {
-            if(age<0)
-                Console.WriteLine("Animal can't be under age of 0 years.");
-            else if(age>100)
-                Console.WriteLine("Animals can't be over the age of 150 years.");
-            else   
-                age=value;
-        } 
-    }
-    public double Weight
-    {
-        get {return weight;}
-        private set
-        {
-            if(weight<0)
-                Console.WriteLine("Animal can't weigh less than 0 kg.");
-            else if(weight>100)
-                Console.WriteLine("Animals can't weigh over 4500 kg.");
-            else   
-                weight=value;
+            throw new ArgumentOutOfRangeException("Animal cannot be born in the future");
         }
+        if (weightInKg < 0)
+        {
+            throw new ArgumentOutOfRangeException("Weight cannot be negative");
+        }
+
+        Name = name;
+        BirthDate = birthDate;
+        Weight = weightInKg;
     }
-    public Animal(string name, int age, double weight)
-    {
-        this.Name = name;
-        this.Age = age;
-        this.Weight= weight;
-    }
-    
+
     public void ShowAnimalName()
     {
-        Console.WriteLine($"The animal's name is: {Name}");
+        Console.WriteLine($"The animal is named: {Name}");
     }
-    public string ShowAnimalInformation()
+
+    public virtual string ShowAnimalInformation()
     {
-        return $"This animal is: {Name}, it's age is {Age} and it weighs {Weight}";
+        return $"This animal is named: {Name}, it is {AgeInYears} years old and it weighs {Weight} kg";
     }
 }

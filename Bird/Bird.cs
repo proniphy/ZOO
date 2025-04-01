@@ -1,8 +1,9 @@
-class Bird : Animal 
+class Bird : Animal
 {
     public bool Flying {get;set;}
 
-    public Bird(string name, int age, bool flying, double weight) : base(name, age, weight)
+    public Bird(string name, DateTime birthDate, double weightInKg, bool flying)
+        : base(name, birthDate, weightInKg)
     {
         this.Flying=flying;
     }
