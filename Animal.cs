@@ -3,7 +3,7 @@ using System.Dynamic;
 class Animal
 {
     private int age;
-    private int weight;
+    private double weight;
     public string Name { get; set; }
     public int Age
     {
@@ -18,7 +18,7 @@ class Animal
                 age=value;
         } 
     }
-    public int Weight
+    public double Weight
     {
         get {return weight;}
         private set
@@ -31,7 +31,7 @@ class Animal
                 weight=value;
         }
     }
-    public Animal(string name, int age, int weight)
+    public Animal(string name, int age, double weight)
     {
         this.Name = name;
         this.Age = age;
@@ -42,8 +42,8 @@ class Animal
     {
         Console.WriteLine($"The animal's name is: {Name}");
     }
-    public void ShowAnimalInformation()
+    public string ShowAnimalInformation()
     {
-        Console.WriteLine($"This animal is: {Name}, it's age is {Age} and it weighs {Weight}");
+        return $"This animal is: {Name}, it's age is {Age} and it weighs {Weight}";
     }
 }

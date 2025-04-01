@@ -3,7 +3,7 @@ class Mammal : Animal
     public bool IsWarmBlooded {get; set; } = true; //Mammals are warm blooded
     public string? Habitat {get; set; } //living habitat of an animal
 
-    public Mammal (string? name, int age, int weight, bool isWarmBlooded, string? habitat)
+    public Mammal (string? name, int age, double weight, bool isWarmBlooded, string? habitat)
     : base(name, age, weight)
     {
         this.Habitat=habitat;
@@ -13,6 +13,7 @@ class Mammal : Animal
     {
         return animal is Mammal; //depending on if animal is or isn't a mammal
     }
+
     public static void MammalInformation() //Basic mammal info
     {
         Console.WriteLine("Most mammals are distinct by this characteristics: ");
@@ -22,5 +23,10 @@ class Mammal : Animal
         Console.WriteLine("4. They generally have more complex brain than the rest of the animal kingdom.");
         Console.WriteLine("5. We can categorize mammals based on their diet in three groups: ");
         Console.WriteLine("\t5.1. Carnivores.\n\t5.2. Herbivores.\n\t5.3. Omnivores.");
+    }
+
+    public void ShowMammalInformation()
+    {
+        Console.WriteLine($"{base.ShowAnimalInformation()}. It's from the {Habitat} habitat.");
     }
 }
