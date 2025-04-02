@@ -2,7 +2,7 @@ class Reptile : Animal
 {
     private int legs;
     private string habitat;
-    public int legs
+    public int Legs
     {
         get {return legs;}
         private set
