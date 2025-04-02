@@ -23,7 +23,6 @@ class Mammal : Animal
         Console.WriteLine("4. They generally have more complex brain than the rest of the animal kingdom.");
         Console.WriteLine("5. We can categorize mammals based on their diet in three groups: ");
         Console.WriteLine("\t5.1. Carnivores.\n\t5.2. Herbivores.\n\t5.3. Omnivores.");
-        Console.WriteLine("\t5.1. Carnivores.\n\t5.2. Herbivores.\n\t5.3. Omnivores.");
     }
 
     public void ShowMammalInformation()
