@@ -19,7 +19,7 @@ class Reptile : Animal
     public string? Habitat
     {
         get {return habitat;}
-        private set {havitat=value;}
+        private set {habitat=value;}
     }
     public Reptile(string name, DateTime birthDate, double weight, int legs, string habitat) : base(name, birthDate, weight)
     {
