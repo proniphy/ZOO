@@ -30,7 +30,22 @@ class Animal
         BirthDate = birthDate;
         Weight = weightInKg;
     }
+<<<<<<< HEAD
+    public Animal(string name, int age, int weight)
+    {
+        this.Name = name;
+        this.Age = age;
+        this.Weight= weight;
+    }
+    public Animal(int age, int weight)
+    {
+        this.Age = age;
+        this.Weight= weight;
+    }
+    
+=======
 
+>>>>>>> 629e6a2d3efaa7e40f0034302bbe8fd93433d157
     public void ShowAnimalName()
     {
         Console.WriteLine($"The animal is named: {Name}");

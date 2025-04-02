@@ -38,7 +38,13 @@ class Program
             }
         }
     }
+<<<<<<< HEAD
+}
+static class Validator
+{
+=======
 
+>>>>>>> 629e6a2d3efaa7e40f0034302bbe8fd93433d157
     public static int GetIntInput(string message) //Function to get Int, also checks for correct input
     {
         int value;

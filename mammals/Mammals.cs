@@ -8,7 +8,9 @@ class Mammal : Animal
     {
         this.Habitat=habitat;
     }
-
+    public Mammal ( int age, int weight, bool isWarmBlooded)
+    : base(age, weight)
+    {}
     public static bool IsMammal(Animal animal) //returns true or false
     {
         return animal is Mammal; //depending on if animal is or isn't a mammal
