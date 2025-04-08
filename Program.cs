@@ -111,6 +111,46 @@ class Program
         }
     }
 
+    public static DateTime GetDateInput(string prompt)
+    {
+        Console.WriteLine(prompt);
+        int year;
+        while (true)
+        {
+            Console.Write("- Enter year: ");
+            string? input = Console.ReadLine();
+            if (int.TryParse(input, out int y) && y > 0)
+            {
+                year = y;
+                break;
+            }
+        }
+        int month;
+        while (true)
+        {
+            Console.Write("- Enter month (1-12): ");
+            string? input = Console.ReadLine();
+            if (int.TryParse(input, out int m) && m > 0 && m <= 12)
+            {
+                month = m;
+                break;
+            }
+        }
+        int day;
+        int maxDay = DateTime.DaysInMonth(year, month);
+        while (true)
+        {
+            Console.Write($"- Enter day (1-{maxDay}): ");
+                        string? input = Console.ReadLine();
+            if (int.TryParse(input, out int d) && d > 0 && d <= maxDay)
+            {
+                day = d;
+                break;
+            }
+        }
+        return new DateTime(year, month, day);
+    }
+
     public static Catalog GetCatalog(Catalog animalCatalog)
     {
         while (true)
@@ -120,13 +160,11 @@ class Program
             if (type == "exit") break;
 
             string name = GetStringInput("Enter animal's name: ");
-            int birthYear = GetIntInput("Enter animal's birth year: ");
-            int birthMonth = GetIntInput("Enter animal's birth month (1-12): ");
+            DateTime birthDate = GetDateInput("Enter the animal's birth date: ");
             double weight = GetDoubleInput("Enter animal's weight: ");
             HabitatTypes habitat = GetHabitatInput("Enter the animal's habitat: ");
             string? origin = GetOptionalString("Enter the region of origin (Optional): ");
 
-            var birthDate = new DateTime(birthYear, birthMonth, 1);
             if (type == "mammal")
             {
                 Mammal mammal = new Mammal(name, birthDate, weight, habitat, origin);
