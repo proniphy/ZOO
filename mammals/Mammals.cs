@@ -5,7 +5,7 @@ public abstract class Mammal : Animal
     public abstract void MammalInformation(); //Basic mammal info
     public abstract void FeedWithBabyMilk();
 
-    //constructor for easier pointing
+    //constructor for easier pointing.
     public Mammal(string name, DateTime birthDate, double weightInKg) : base (name,birthDate,weightInKg)
     {
     }
