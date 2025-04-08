@@ -24,7 +24,7 @@ class Herbivore : Mammal
     }
 
     public Herbivore(string name, DateTime birthDate, double weightInKg, string habitat, string favoritePlant)
-    : base (name, birthDate, weightInKg)
+    : base (name, birthDate, weightInKg) //final constructor
     {
         FavoritePlant=favoritePlant;
         Habitat = habitat;
