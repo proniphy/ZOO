@@ -1,8 +1,9 @@
+using System.Collections;
 
 /// <summary>
 /// Generic container for animals that allows extracting subsets based on type
 /// </summary>
-class AnimalCollection
+class AnimalCollection : IEnumerable<Animal>
 {
     private Dictionary<Type, List<Animal>> listsPerType;
     private int totalCount = 0;
@@ -106,5 +107,57 @@ class AnimalCollection
             }
         }
         return false;
+    }
+
+    public struct Enumerator : IEnumerator<Animal>
+    {
+        private IEnumerator<KeyValuePair<Type, List<Animal>>> dictEnum;
+        private IEnumerator<Animal>? currentListEnum = null;
+
+        public Enumerator(AnimalCollection collection)
+        {
+            dictEnum = collection.listsPerType.GetEnumerator();
+        }
+
+        public bool MoveNext()
+        {
+            if (currentListEnum != null && currentListEnum.MoveNext())
+            {
+                return true;
+            }
+            else
+            {
+                while (dictEnum.MoveNext())
+                {
+                    currentListEnum = dictEnum.Current.Value.GetEnumerator();
+                    if (currentListEnum.MoveNext())
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public void Reset()
+        {
+            dictEnum.Reset();
+            currentListEnum = null;
+        }
+
+        public void Dispose() {}
+
+        public Animal Current => currentListEnum?.Current;
+        object IEnumerator.Current => Current;
+    }
+
+    public IEnumerator<Animal> GetEnumerator()
+    {
+        return new Enumerator(this);
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 }
