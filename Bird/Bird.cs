@@ -28,9 +28,11 @@ class Bird : Animal, IVocalize, ISpeciesInfo
 
     public static string GetSpeciesInfo()
     {
-        return "Birds are warm-blooded vertebrates characterized by feathers, " +
-            "toothless beaked jaws, the laying of hard-shelled eggs, " +
-            "and a high metabolic rate. They range in size from tiny " +
-            "hummingbirds to large ostriches.";
+        return "Birds are warm-blooded vertebrates generally defined by:\n" +
+            " - Having bodies covered in feathers\n" +
+            " - Having toothless beaked jaws\n" +
+            " - Laying hard-shelled eggs\n" +
+            " - A high metabolic rate\n" +
+            " - Ranging in size from tiny hummingbirds to large ostriches.";
     }
 }
