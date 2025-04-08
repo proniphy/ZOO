@@ -17,11 +17,11 @@ class Catalog
     }
 
     public void DisplayMammalCatalog()
-    {    
+    {
         if (mammalList.Any())
         {
             Console.WriteLine("Mammal Catalog: ");
-            Mammal.MammalInformation();
+            Console.WriteLine(Mammal.GetSpeciesInfo());
             foreach (var mammal in mammalList)
             {
                 mammal.ShowMammalInformation();
@@ -38,6 +38,7 @@ class Catalog
         if (birdList.Any())
         {
             Console.WriteLine("Bird Catalog: ");
+            Console.WriteLine(Bird.GetSpeciesInfo());
             foreach (var bird in birdList)
             {
                 bird.ShowBirdInformation();
