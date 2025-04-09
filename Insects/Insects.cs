@@ -1,26 +1,13 @@
+using System;
+
 namespace Zoo.Insects
 {
-    /// <summary>
-    /// Base class for all insects
-    /// </summary>
-    public class Insect : Animal
+    public abstract class Insect : Animal
     {
-        private bool canFly;
+        public bool CanFly { get; set; }
 
-        public bool CanFly
-        {
-            get { return canFly; }
-            set { canFly = value; }
-        }
-
-        /// <summary>
-        /// Static counter for all insects
-        /// </summary>
         public static int TotalInsects { get; private set; } = 0;
 
-        /// <summary>
-        /// Inner class for health status
-        /// </summary>
         public class HealthStatus
         {
             public bool IsVaccinated { get; set; }
@@ -35,22 +22,26 @@ namespace Zoo.Insects
 
         public HealthStatus Status { get; set; }
 
-        public Insect(string name, int age, int weight, bool canFly)
-            : base(name, age, weight)
+        public Insect(string name, DateTime birthDate, double weightInKg,
+                      HabitatTypes habitat, string? origin, bool canFly)
+            : base(name, birthDate, weightInKg, habitat, origin)
         {
-            this.CanFly = canFly;
+            CanFly = canFly;
             Status = new HealthStatus(false, "No info");
             TotalInsects++;
-        }
-
-        public virtual void MakeSound()
-        {
-            Console.WriteLine("Generic insect sound.");
         }
 
         public static void PrintInsectCount()
         {
             Console.WriteLine($"Total insects: {TotalInsects}");
         }
+
+        public override string GetAnimalInformation()
+        {
+            return base.GetAnimalInformation() + $" Can fly: {CanFly}.";
+        }
+
+        public abstract override void MakeSound();
+        public abstract void ShowTypeFacts();
     }
 }
