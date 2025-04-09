@@ -6,9 +6,9 @@ class Chameleon : Reptile, ICamouflaging
     {
     }
 
-    public override void MakeSound()
+    public override void Vocalize()
     {
-        Console.WriteLine($"{Name} makes soft clicking sounds.");
+        Console.WriteLine($"{Name} makes soft clicking sounds and hisss");
     }
 
     public override void ShowAnimalInformation()
@@ -23,10 +23,5 @@ class Chameleon : Reptile, ICamouflaging
     public void Camouflage()
     {
         Console.WriteLine($"{Name} blends into the surroundings.");
-    }
-    
-    public override Vocalize()
-    {
-        Console.WriteLine($"{Name} can Hisssss");
     }
 }

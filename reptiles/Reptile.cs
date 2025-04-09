@@ -22,7 +22,6 @@ abstract class Reptile : Animal
         Console.WriteLine("This is done so that the reptile regulates its internal temperature.");
     }
 
-    public override abstract void ShowAnimalInformation();
     public void ShowClassInformation()
     {
         Console.WriteLine("1. The reptiles are air-breathing vertebrates.");

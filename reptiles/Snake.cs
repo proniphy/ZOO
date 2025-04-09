@@ -9,7 +9,7 @@ class Snake : Reptile, IVenomous
         IsVenomous = isVenomous;
     }
 
-    public override void MakeSound()
+    public override void Vocalize()
     {
         Console.WriteLine($"{Name} hisses.");
     }
@@ -27,10 +27,5 @@ class Snake : Reptile, IVenomous
         Console.WriteLine(IsVenomous
             ? $"{Name} bites and injects venom!"
             : $"{Name} bites, but it's harmless.");
-    }
-
-    public override Vocalize()
-    {
-        Console.WriteLine($"{Name} can Hissss");
     }
 }
