@@ -35,4 +35,10 @@ class Bird : Animal, IVocalize, ISpeciesInfo
             " - A high metabolic rate\n" +
             " - Ranging in size from tiny hummingbirds to large ostriches.";
     }
+
+    public void ShowBirdInformation()
+    {
+        string canFly = Flying ? "It can fly." : "It can't fly.";
+        Console.WriteLine($"{base.ShowAnimalInformation()}. {canFly}");
+    }
 }
