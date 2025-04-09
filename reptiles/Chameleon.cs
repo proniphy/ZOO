@@ -1,0 +1,32 @@
+class Chameleon : Reptile, ICamouflaging
+{
+    public Chameleon(string name, DateTime birthDate, double weight, HabitatTypes habitat,
+        string? origin)
+        : base(name, birthDate, weight, habitat, origin, 4, true)     // Chameleons can only have 4 legs and can lay eggs.
+    {
+    }
+
+    public override void MakeSound()
+    {
+        Console.WriteLine($"{Name} makes soft clicking sounds.");
+    }
+
+    public override void ShowAnimalInformation()
+    {
+        Console.WriteLine("1. It's a color-shifting chameleon. While most people think chameleons change color only to blend into their environment,");
+        Console.WriteLine("     they actually do it to communicate emotions like aggression, fear, or readiness to mate. Temperature and light also influence the change.");
+        Console.WriteLine("2. A chameleon's tongue can be up to twice the length of its body and can launch out at lightning speed—up to 0.07 seconds—to snatch insects with sticky precision.");
+        Console.WriteLine("3. Chameleons have independently rotating eyes—each eye can move in a different direction. This gives them a full 360° field of vision ");
+        Console.WriteLine("     and precise depth perception for spotting prey.");
+    }
+
+    public void Camouflage()
+    {
+        Console.WriteLine($"{Name} blends into the surroundings.");
+    }
+    
+    public override Vocalize()
+    {
+        Console.WriteLine($"{Name} can Hisssss");
+    }
+}
