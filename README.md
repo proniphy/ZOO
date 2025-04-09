@@ -30,7 +30,7 @@ e.g. IName for Animal.
 
 # Teo is working on REPTILES
 # Megi is working on INSECTS
-# Maria is working on BIRDS
+# Mira is working on BIRDS
 # Hris and Chernev working on MAMMALS 
 # Vili is working on FISH
 # Ivan Tabashki is working on ANIMAL
