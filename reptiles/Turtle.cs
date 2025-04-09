@@ -21,6 +21,7 @@ class Turtle : Reptile, ISwimmer
         Console.WriteLine("2. Some species, like the Galápagos tortoise, can live over 100 years. Turtles have slow metabolisms, which contributes to their long lifespans.");
         Console.WriteLine("3. While they have lungs, some turtles can absorb oxygen through their skin or cloaca (rear end)—a handy trick for underwater survival, especially during hibernation.");
         Console.WriteLine("4. A turtle’s shell isn’t just armor—it's actually fused with their spine and ribs, making it a permanent, living part of their body. They cannot crawl out of it like in cartoons.");
+    }
 
     public void Swim()
     {
