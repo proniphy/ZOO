@@ -24,12 +24,24 @@ class AnimalCollection : IEnumerable<Animal>
         }
     }
 
-    private void RecountLists()
+    private void RecountAndPruneLists()
     {
         totalCount = 0;
-        foreach ((_, var l) in listsPerType)
+        var prune = new List<Type>();
+        foreach ((Type t, var l) in listsPerType)
         {
-            totalCount += l.Count;
+            if (l.Count > 0)
+            {
+                totalCount += l.Count;
+            }
+            else
+            {
+                prune.Add(t);
+            }
+        }
+        foreach (Type t in prune)
+        {
+            listsPerType.Remove(t);
         }
     }
 
@@ -55,7 +67,7 @@ class AnimalCollection : IEnumerable<Animal>
         {
             removed = listsPerType[t].Remove(animal);
         }
-        RecountLists();
+        RecountAndPruneLists();
         return removed;
     }
 
@@ -66,7 +78,7 @@ class AnimalCollection : IEnumerable<Animal>
         {
             removed += list.RemoveAll(predicate);
         }
-        RecountLists();
+        RecountAndPruneLists();
         return removed;
     }
 
@@ -89,6 +101,16 @@ class AnimalCollection : IEnumerable<Animal>
                     result.Add((T)a);
                 }
             }
+        }
+        return result;
+    }
+
+    public List<Type> GetContainedAnimalTypes()
+    {
+        var result = new List<Type>();
+        foreach ((Type t, _) in listsPerType)
+        {
+            result.Add(t);
         }
         return result;
     }
