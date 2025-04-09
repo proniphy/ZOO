@@ -1,0 +1,4 @@
+interface ICamouflaging
+{
+    void Camouflage();
+}
