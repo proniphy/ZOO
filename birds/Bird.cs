@@ -36,9 +36,9 @@ class Bird : Animal, IVocalize, ISpeciesInfo
             " - Ranging in size from tiny hummingbirds to large ostriches.";
     }
 
-    public void ShowBirdInformation()
+    /*public void ShowBirdInformation()
     {
         string canFly = Flying ? "It can fly." : "It can't fly.";
         Console.WriteLine($"{base.ShowAnimalInformation()}. {canFly}");
-    }
+    }*/
 }
