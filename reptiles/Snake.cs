@@ -14,7 +14,7 @@ class Snake : Reptile, IVenomous
         Console.WriteLine($"{Name} hisses.");
     }
 
-    public override void GetAnimalInformation()
+    public override string GetAnimalInformation()
     {
         string info = $"    This animal is named: {Name}, it is {AgeInYears} years old, " +
             $"it weighs {Weight} kg and is native to the {NativeHabitat.FriendlyName()} habitat. \n" + 

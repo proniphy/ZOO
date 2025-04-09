@@ -11,7 +11,7 @@ class Chameleon : Reptile, ICamouflaging
         Console.WriteLine($"{Name} makes soft clicking sounds and hisss");
     }
 
-    public override void GetAnimalInformation()
+    public override string GetAnimalInformation()
     {
         string info = $"    This animal is named: {Name}, it is {AgeInYears} years old, " +
             $"it weighs {Weight} kg and is native to the {NativeHabitat.FriendlyName()} habitat. \n" + 
