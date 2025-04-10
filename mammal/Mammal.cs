@@ -57,7 +57,7 @@ abstract class Mammal :   Animal, IVocalize
             "  5. We can categorize mammals based on their diet in three groups:\n" +
             "    5.1. Carnivores.\n" +
             "    5.2. Herbivores.\n" +
-            "    5.3. Omnivores.";
+            "    5.3. Omnivores."; 
     }
     public override string GetAnimalInformation()
     {

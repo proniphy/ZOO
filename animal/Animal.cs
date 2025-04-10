@@ -74,7 +74,7 @@ abstract class Animal : INamed, IAdoptable, IHabitation
             weight = value;
         }
     }
-    private double weight;
+    public double weight;
 
     /// <summary>
     /// Country/region this specific animal was captured from.
