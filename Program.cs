@@ -9,12 +9,16 @@ class Program
     }
 
     static void Main()
-    {
+    {/*
         Catalog animalCatalog = new Catalog();
 
-        animalCatalog.AddMammal(new Mammal(
-            "Sealy the seal", YearsInPastFromToday(2), 80.0, HabitatTypes.Tundra
-        ));
+       // Mammal test = new Mammal();
+      //  Console.WriteLine("The test animal: ");
+      //  test.GetAnimalInformation();
+
+        //animalCatalog.AddMammal(new Mammal(
+           /// "Sealy the seal", YearsInPastFromToday(2), 80.0, HabitatTypes.Tundra
+       // ));
         animalCatalog.AddBird(new Bird(
             "Polly the parrot", YearsInPastFromToday(1), 1.0, HabitatTypes.TropicalRainforest
         ));
@@ -39,7 +43,7 @@ class Program
             {
                 Console.WriteLine("Invalid choice. Please enter 1, 2, or 3.");
             }
-        }
+        } */
     }
 
     public static int GetIntInput(string message) //Function to get Int, also checks for correct input
@@ -165,21 +169,21 @@ class Program
             HabitatTypes habitat = GetHabitatInput("Enter the animal's habitat: ");
             string? origin = GetOptionalString("Enter the region of origin (Optional): ");
 
-            if (type == "mammal")
-            {
-                Mammal mammal = new Mammal(name, birthDate, weight, habitat, origin);
-                animalCatalog.AddMammal(mammal);
-            }
-            else if (type == "bird")
-            {
-                bool flying = GetStringInput("Can the bird fly? (yes/no): ") == "yes";
-                Bird bird = new Bird(name, birthDate, weight, habitat, origin, flying);
-                animalCatalog.AddBird(bird);
-            }
-            else
-            {
-                Console.WriteLine("Invalid type. Please enter Mammal or Bird.");
-            }
+           // if (type == "mammal")
+          //  {
+           //     Mammal mammal = new Mammal(name, birthDate, weight, habitat, origin);
+           //     animalCatalog.AddMammal(mammal);
+          //  }
+           // else if (type == "bird")
+          //  {
+           //     bool flying = GetStringInput("Can the bird fly? (yes/no): ") == "yes";
+           //     Bird bird = new Bird(name, birthDate, weight, habitat, origin, flying);
+          //      animalCatalog.AddBird(bird);
+          //  }
+         //   else
+          //  {
+           //     Console.WriteLine("Invalid type. Please enter Mammal or Bird.");
+           // }
         }
         return animalCatalog;
     }
