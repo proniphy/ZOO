@@ -141,4 +141,13 @@ abstract class Animal : INamed, IAdoptable, IHabitation
     {
         Console.WriteLine($"{GetAnimalInformation()}");
     }
+    public virtual string GetAnimalClass() //helps so we can identify which class a animals belongs to
+    {
+        return "Unspecified animal class.";
+    }
+
+    public virtual string GetAnimalClassInfo() //prints basic class information
+    {
+        return "This is a basic animal.";
+    }
 }
