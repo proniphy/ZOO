@@ -1,5 +1,5 @@
 
-public abstract class Animal : INamed, IAdoptable, IHabitation
+public abstract class Animal : INamed, IAdoptable, IHabitation, ISpeciesInfo
 {
     /// <summary>
     /// The name of this animal.
@@ -151,8 +151,10 @@ public abstract class Animal : INamed, IAdoptable, IHabitation
         return "Unspecified animal class.";
     }
 
-    public virtual string GetAnimalClassInfo() //prints basic class information
+    public static string GetSpeciesInfo() //prints basic class information
     {
         return "This is a basic animal.";
     }
+
+    public virtual string GetDerivedSpeciesInfo() => GetSpeciesInfo();
 }

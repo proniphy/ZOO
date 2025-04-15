@@ -5,7 +5,7 @@ abstract class Mammal : Animal, IVocalize
     private double averageBodyTemperature;
 
     //Fur type e.g. none for dolphins, long for alpaca/sheep, etc...
-    public string? FurType {get; set;} 
+    public string? FurType {get; set;}
     //Ear type e.g. big for elephant, pointy for lynx, etc..
     public string? EarType {get; set;}
     //Tail type e.g. no tail for baboons, short/bushy for some type of cats
@@ -48,7 +48,7 @@ abstract class Mammal : Animal, IVocalize
         return "Mammal";
     }
 
-    public override string GetAnimalClassInfo() //Basic mammal info
+    public static new string GetSpeciesInfo() //Basic mammal info
     {
         return "Most mammals are distinct by these characteristics:\n" +
             "  1. They're warm-blooded animals and typically have hair or fur.\n" +
@@ -58,8 +58,11 @@ abstract class Mammal : Animal, IVocalize
             "  5. We can categorize mammals based on their diet in three groups:\n" +
             "    5.1. Carnivores.\n" +
             "    5.2. Herbivores.\n" +
-            "    5.3. Omnivores."; 
+            "    5.3. Omnivores.";
     }
+
+    public override string GetDerivedSpeciesInfo() => GetSpeciesInfo();
+
     public override string GetAnimalInformation() //points to GetAnimalInformation in Animal.cs and adds on the extra info.
     {
         string info=base.GetAnimalInformation();
