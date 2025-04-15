@@ -103,6 +103,20 @@ public abstract class Fish : Animal
     }
     protected double length = 0;
 
+    public override HabitatTypes NativeHabitat
+    {
+        get => base.NativeHabitat;
+        set {
+            if (value != HabitatTypes.OceanAndCoast
+                && value != HabitatTypes.RiversAndLakes
+                && value != HabitatTypes.Wetlands)
+            {
+                throw new ArgumentException("Invalid habitat for Fish");
+            }
+            base.NativeHabitat = value;
+        }
+    }
+
     public override string GetAnimalInformation()
     {
         string info = base.GetAnimalInformation();
