@@ -41,4 +41,6 @@ public class Shark : Fish, ISpeciesInfo
             highlighting the need for conservation efforts.
             """;
     }
+
+    public virtual string GetDerivedSpeciesInfo() => GetSpeciesInfo();
 }
