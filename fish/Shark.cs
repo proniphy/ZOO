@@ -1,4 +1,4 @@
-public class Shark : Fish, ISpeciesInfo
+public class Shark : Fish, ISpeciesInfo, IEndangered
 {
     // All sharks are jawed, cartilaginous fish that are neither ray-finned, nor lobe-finned
     public override bool IsJawed => true;
@@ -29,6 +29,8 @@ public class Shark : Fish, ISpeciesInfo
             base.FinCount = value;
         }
     }
+
+    public virtual RedListCategory Endangerment { get; set; } = RedListCategory.DataDeficient;
 
     public static string GetSpeciesInfo()
     {
