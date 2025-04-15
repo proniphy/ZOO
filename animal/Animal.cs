@@ -1,5 +1,5 @@
 
-abstract class Animal : INamed, IAdoptable, IHabitation
+public abstract class Animal : INamed, IAdoptable, IHabitation
 {
     /// <summary>
     /// The name of this animal.
@@ -132,7 +132,7 @@ abstract class Animal : INamed, IAdoptable, IHabitation
             $"it weighs {Weight} kg and is native to the {NativeHabitat.FriendlyName()} habitat. ";
         if (!string.IsNullOrEmpty(RegionOfOrigin))
         {
-            info += $" It was captured from the region {RegionOfOrigin}. ";
+            info += $"It was captured from the region {RegionOfOrigin}. ";
         }
         return info;
     }
