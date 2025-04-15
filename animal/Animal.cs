@@ -32,7 +32,7 @@ abstract class Animal : INamed, IAdoptable, IHabitation
             adopter = value;
         }
     }
-    public string? adopter;
+    private string? adopter;
 
     /// <summary>
     /// The native habitat for this species of animal.
@@ -74,7 +74,7 @@ abstract class Animal : INamed, IAdoptable, IHabitation
             weight = value;
         }
     }
-    public double weight;
+    private double weight;
 
     /// <summary>
     /// Country/region this specific animal was captured from.
