@@ -1,9 +1,8 @@
-
 using System;
 
 namespace Zoo.Insects
 {
-    public class Mosquito : Insect
+    internal class Mosquito : Insect
     {
         public bool IsMalariaCarrier { get; private set; }
 

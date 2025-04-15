@@ -1,9 +1,8 @@
-
 using System;
 
 namespace Zoo.Insects
 {
-    public class Fly : Insect
+    internal class Fly : Insect
     {
         public int BuzzFrequency { get; set; }
 

@@ -1,8 +1,9 @@
 using System;
+using Zoo;
 
 namespace Zoo.Insects
 {
-    public abstract class Insect : Animal
+    internal abstract class Insect : Animal, IVocalize, ISpeciesInfo
     {
         public bool CanFly { get; set; }
 
@@ -41,7 +42,13 @@ namespace Zoo.Insects
             return base.GetAnimalInformation() + $" Can fly: {CanFly}.";
         }
 
-        public abstract override void MakeSound();
         public abstract void ShowTypeFacts();
+        public abstract void MakeSound(); // From Animal
+        public void Vocalize() => MakeSound();
+
+        public static string GetSpeciesInfo()
+        {
+            return "Insects are invertebrates with exoskeletons, segmented bodies, and jointed appendages.";
+        }
     }
 }
