@@ -16,12 +16,22 @@ class Program
         Console.WriteLine("The test animal: ");
         test.GetAnimalInformation();
 
-        animalCatalog.AddMammal(new Mammal(
-           "Sealy the seal", YearsInPastFromToday(2), 80.0, HabitatTypes.Tundra
+        animalCatalog.AddAnimal(new Mammal(
+            "Sealy the seal", YearsInPastFromToday(2), 80.0, HabitatTypes.Tundra
         ));
-        animalCatalog.AddBird(new Bird(
+        animalCatalog.AddAnimal(new Bird(
             "Polly the parrot", YearsInPastFromToday(1), 1.0, HabitatTypes.TropicalRainforest
         ));
+
+        var harry = new GreatHammerHead();
+        harry.Name = "Harry the hammerhead";
+        harry.BirthDate = YearsInPastFromToday(5);
+        harry.Weight = 300.0;
+        harry.NativeHabitat = HabitatTypes.OceanAndCoast;
+        harry.GillCount = 12;
+        harry.Length = 6.0;
+        harry.FinCount = 7;
+        animalCatalog.AddAnimal(harry);
 
         while (true)
         {
@@ -38,6 +48,7 @@ class Program
             {
                 animalCatalog.DisplayMammalCatalog();
                 animalCatalog.DisplayBirdCatalog();
+                animalCatalog.DisplaySharkCatalog();
             }
             else
             {
@@ -173,13 +184,13 @@ class Program
             if (type == "mammal")
             {
                 Mammal mammal = new Mammal(name, birthDate, weight, habitat, origin);
-                animalCatalog.AddMammal(mammal);
+                animalCatalog.AddAnimal(mammal);
             }
             else if (type == "bird")
             {
                 bool flying = GetStringInput("Can the bird fly? (yes/no): ") == "yes";
                 Bird bird = new Bird(name, birthDate, weight, habitat, origin, flying);
-                animalCatalog.AddBird(bird);
+                animalCatalog.AddAnimal(bird);
             }
             else
             {

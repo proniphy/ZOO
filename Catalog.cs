@@ -3,25 +3,21 @@ using System.Diagnostics.CodeAnalysis;
 
 class Catalog
 {
-    private List<Mammal> mammalList = new List<Mammal>();
-    private List<Bird> birdList = new List<Bird>();
+    private AnimalCollection animals = new AnimalCollection();
 
-    public void AddMammal(Mammal mammal)
+    public void AddAnimal(Animal animal)
     {
-        mammalList.Add(mammal);
-    }
-
-    public void AddBird(Bird bird)
-    {
-        birdList.Add(bird);
+        animals.Add(animal);
     }
 
     public void DisplayMammalCatalog()
     {
-        if (mammalList.Any())
+        List<Mammal> mammals = animals.GetAnimalsOfType<Mammal>();
+        if (mammals.Any())
         {
             Console.WriteLine("Mammal Catalog: ");
-            foreach (var mammal in mammalList)
+            Console.WriteLine(Mammal.GetSpeciesInfo());
+            foreach (var mammal in mammals)
             {
                 mammal.ShowAnimalInformation();
             }
@@ -34,11 +30,12 @@ class Catalog
 
     public void DisplayBirdCatalog()
     {
-        if (birdList.Any())
+        List<Bird> birds = animals.GetAnimalsOfType<Bird>();
+        if (birds.Any())
         {
             Console.WriteLine("Bird Catalog: ");
             Console.WriteLine(Bird.GetSpeciesInfo());
-            foreach (var bird in birdList)
+            foreach (var bird in birds)
             {
                 bird.ShowBirdInformation();
             }
@@ -46,6 +43,24 @@ class Catalog
         else
         {
             Console.WriteLine("Currently there are no birds in this catalog.");
+        }
+    }
+
+    public void DisplaySharkCatalog()
+    {
+        List<Shark> sharks = animals.GetAnimalsOfType<Shark>();
+        if (sharks.Any())
+        {
+            Console.WriteLine("Shark Catalog: ");
+            Console.WriteLine(Shark.GetSpeciesInfo());
+            foreach (var shark in sharks)
+            {
+                shark.ShowAnimalInformation();
+            }
+        }
+        else
+        {
+            Console.WriteLine("Currently there are no sharks in this catalog.");
         }
     }
 }
