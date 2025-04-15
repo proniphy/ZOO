@@ -44,7 +44,7 @@ abstract class Animal : INamed, IAdoptable, IHabitation
     /// </summary>
     public DateTime BirthDate
     {
-        get => BirthDate;
+        get => birthDate;
         set {
             if (value > DateTime.Today)
             {
