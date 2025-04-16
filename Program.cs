@@ -9,11 +9,15 @@ class Program
     }
 
     static void Main()
-    {
+    {/* TODO to be fixed with new classes
         Catalog animalCatalog = new Catalog();
 
+        Mammal test = new Mammal();
+        Console.WriteLine("The test animal: ");
+        test.GetAnimalInformation();
+
         animalCatalog.AddMammal(new Mammal(
-            "Sealy the seal", YearsInPastFromToday(2), 80.0, HabitatTypes.Tundra
+           "Sealy the seal", YearsInPastFromToday(2), 80.0, HabitatTypes.Tundra
         ));
         animalCatalog.AddBird(new Bird(
             "Polly the parrot", YearsInPastFromToday(1), 1.0, HabitatTypes.TropicalRainforest
@@ -39,7 +43,7 @@ class Program
             {
                 Console.WriteLine("Invalid choice. Please enter 1, 2, or 3.");
             }
-        }
+        } */
     }
 
     public static int GetIntInput(string message) //Function to get Int, also checks for correct input
@@ -165,6 +169,7 @@ class Program
             HabitatTypes habitat = GetHabitatInput("Enter the animal's habitat: ");
             string? origin = GetOptionalString("Enter the region of origin (Optional): ");
 
+            /* TODO to be fixed with new classes
             if (type == "mammal")
             {
                 Mammal mammal = new Mammal(name, birthDate, weight, habitat, origin);
@@ -180,6 +185,7 @@ class Program
             {
                 Console.WriteLine("Invalid type. Please enter Mammal or Bird.");
             }
+            */
         }
         return animalCatalog;
     }
