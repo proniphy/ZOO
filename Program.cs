@@ -169,21 +169,23 @@ class Program
             HabitatTypes habitat = GetHabitatInput("Enter the animal's habitat: ");
             string? origin = GetOptionalString("Enter the region of origin (Optional): ");
 
-           // if (type == "mammal")
-          //  {
-           //     Mammal mammal = new Mammal(name, birthDate, weight, habitat, origin);
-           //     animalCatalog.AddMammal(mammal);
-          //  }
-           // else if (type == "bird")
-          //  {
-           //     bool flying = GetStringInput("Can the bird fly? (yes/no): ") == "yes";
-           //     Bird bird = new Bird(name, birthDate, weight, habitat, origin, flying);
-          //      animalCatalog.AddBird(bird);
-          //  }
-         //   else
-          //  {
-           //     Console.WriteLine("Invalid type. Please enter Mammal or Bird.");
-           // }
+            /* TODO to be fixed with new classes
+            if (type == "mammal")
+            {
+                Mammal mammal = new Mammal(name, birthDate, weight, habitat, origin);
+                animalCatalog.AddMammal(mammal);
+            }
+            else if (type == "bird")
+            {
+                bool flying = GetStringInput("Can the bird fly? (yes/no): ") == "yes";
+                Bird bird = new Bird(name, birthDate, weight, habitat, origin, flying);
+                animalCatalog.AddBird(bird);
+            }
+            else
+            {
+                Console.WriteLine("Invalid type. Please enter Mammal or Bird.");
+            }
+            */
         }
         return animalCatalog;
     }
