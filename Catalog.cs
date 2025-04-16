@@ -21,10 +21,9 @@ class Catalog
         if (mammalList.Any())
         {
             Console.WriteLine("Mammal Catalog: ");
-            Console.WriteLine(Mammal.GetSpeciesInfo());
             foreach (var mammal in mammalList)
             {
-                mammal.ShowMammalInformation();
+                mammal.ShowAnimalInformation();
             }
         }
         else
