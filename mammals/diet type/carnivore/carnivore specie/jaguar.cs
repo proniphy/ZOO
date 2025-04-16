@@ -10,5 +10,5 @@ class Jaguar : Carnivore
     {
         Console.WriteLine($"{Name} roars deeply, a powerful and resonating sound.");
     }
-    //
+    
 }

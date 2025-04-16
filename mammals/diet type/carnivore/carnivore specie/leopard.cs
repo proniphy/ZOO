@@ -10,5 +10,5 @@ class Leopard : Carnivore
     {
         Console.WriteLine($"{Name} growls softly, a low and throaty sound.");
     }
-    //
+    
 }
