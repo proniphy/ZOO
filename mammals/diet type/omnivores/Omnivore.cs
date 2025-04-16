@@ -38,5 +38,5 @@ class Omnivore : Mammal
         baseInfo += $" and eats about {FoodConsumptionPerDayKg} kg of food daily.";
         return baseInfo;
     }
-    
+    //
 }

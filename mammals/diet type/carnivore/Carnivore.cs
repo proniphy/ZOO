@@ -37,4 +37,5 @@ class Carnivore : Mammal
         baseInfo += $" and typically eats about {MeatConsumptionPerDayKg} kg of meat daily.";
         return baseInfo;
     }
+    //
 }
