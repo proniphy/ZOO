@@ -1,8 +1,9 @@
-abstract class Carnivore : Mammal
+class Carnivore : Mammal
 {
     public double MeatConsumptionPerDayKg { get; set; }
     
     public string FavouritePrey { get; set; }
+    public override void Vocalize(){}
 
     public Carnivore() : base()
     {

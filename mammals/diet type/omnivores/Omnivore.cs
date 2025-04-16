@@ -1,9 +1,9 @@
-abstract class Omnivore : Mammal
+class Omnivore : Mammal
 {
     public double FoodConsumptionPerDayKg { get; set; }
     public string FavouritePlantFood { get; set; }
     public string FavouriteAnimalFood { get; set; }
-
+    public override void Vocalize(){}
     public Omnivore() : base()
     {
         FoodConsumptionPerDayKg = 2.0;
@@ -38,4 +38,5 @@ abstract class Omnivore : Mammal
         baseInfo += $" and eats about {FoodConsumptionPerDayKg} kg of food daily.";
         return baseInfo;
     }
+    
 }
