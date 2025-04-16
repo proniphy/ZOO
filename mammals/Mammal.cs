@@ -1,4 +1,4 @@
-abstract class Mammal :   Animal, IVocalize
+abstract class Mammal : Animal, IVocalize
 {
     //All animals are warm blooded
     public bool IsWarmBlooded {get;set;} = true;
@@ -30,7 +30,7 @@ abstract class Mammal :   Animal, IVocalize
         EarType="Unspecified.";
         TailType="Unspecified";
     }
-    //actual mammal constuctor that could be pointed to later on.
+    //actual mammal constructor that could be pointed to later on.
     public Mammal(string name, DateTime birthDate, double weightInKg, HabitatTypes habitat, string origin
     , double averageBodyTemperature, string furType, string earType, string tailType)
     : base(name, birthDate, weightInKg, habitat, origin)

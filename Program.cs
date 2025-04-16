@@ -9,16 +9,16 @@ class Program
     }
 
     static void Main()
-    {/*
+    {/* TODO to be fixed with new classes
         Catalog animalCatalog = new Catalog();
 
-       // Mammal test = new Mammal();
-      //  Console.WriteLine("The test animal: ");
-      //  test.GetAnimalInformation();
+        Mammal test = new Mammal();
+        Console.WriteLine("The test animal: ");
+        test.GetAnimalInformation();
 
-        //animalCatalog.AddMammal(new Mammal(
-           /// "Sealy the seal", YearsInPastFromToday(2), 80.0, HabitatTypes.Tundra
-       // ));
+        animalCatalog.AddMammal(new Mammal(
+           "Sealy the seal", YearsInPastFromToday(2), 80.0, HabitatTypes.Tundra
+        ));
         animalCatalog.AddBird(new Bird(
             "Polly the parrot", YearsInPastFromToday(1), 1.0, HabitatTypes.TropicalRainforest
         ));

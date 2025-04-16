@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 
 class Catalog
-{ /*
+{
     private List<Mammal> mammalList = new List<Mammal>();
     private List<Bird> birdList = new List<Bird>();
 
@@ -21,10 +21,9 @@ class Catalog
         if (mammalList.Any())
         {
             Console.WriteLine("Mammal Catalog: ");
-            Console.WriteLine(Mammal.GetSpeciesInfo());
             foreach (var mammal in mammalList)
             {
-                mammal.ShowMammalInformation();
+                mammal.ShowAnimalInformation();
             }
         }
         else
@@ -48,5 +47,5 @@ class Catalog
         {
             Console.WriteLine("Currently there are no birds in this catalog.");
         }
-    } */
+    }
 }
