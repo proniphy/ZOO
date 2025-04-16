@@ -1,5 +1,5 @@
 using reptile;
-public abstract class Lizard : Reptile
+internal abstract class Lizard : Reptile
 {
     public override int NumberOfLegs 
     { 

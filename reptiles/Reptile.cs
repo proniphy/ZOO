@@ -1,6 +1,6 @@
 namespace reptile
 {
-    public abstract class Reptile : Animal
+    internal abstract class Reptile : Animal
     {
         private int legs = 4;
         public virtual int NumberOfLegs 

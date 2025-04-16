@@ -1,6 +1,6 @@
 In my branch I have implemented abstract class reptile, as well as a couple children classes. I also have some interfaces implemented.
 
-16/04:  Made changes to Reptile class to accomodate the assignment: added more methods, some abstract and some virtual, as well as a virtual property. 
+16/04:  Made changes to Reptile class to accommodate the assignment: added more methods, some abstract and some virtual, as well as a virtual property. 
         Also fixed the check for legs to be in the property. 
         Added class Lizard, which inherits Reptile. There I changed some methods, and added more methods as well. 
         Reworked Chameleon class to be inheriting Lizard. 
