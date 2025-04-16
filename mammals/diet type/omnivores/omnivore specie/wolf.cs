@@ -10,4 +10,5 @@ class Wolf : Omnivore
     {
         Console.WriteLine("The wolf howls in the forest.");
     }
+    //
 }

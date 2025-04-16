@@ -11,4 +11,5 @@ class Fox : Omnivore
     {
         Console.WriteLine("The fox barks softly and makes a yipping sound.");
     }
+    //
 }
