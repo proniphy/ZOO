@@ -1,8 +1,8 @@
 # ZOO
  The project contains ABSTRACT Base class Animal.
 
-### Animal 
-it should contain properites: 
+### Animal
+it should contain properites:
 - Name
 - Adopter
 - birthDate
@@ -17,7 +17,7 @@ it should contain methods:
 - MakeSound (abstract)
 - ShowTypeFacts (abstract)
 
-## The base class is inharated by abstract animal type 
+## The base class is inharated by abstract animal type
 - Mammal
 - Bird
 - Fish
@@ -31,7 +31,7 @@ e.g. IName for Animal.
 # Teo is working on REPTILES
 # Megi is working on INSECTS
 # Maria is working on BIRDS
-# Hris and Chernev working on MAMMALS 
-# Vili is working on FISH
-# Ivan Tabashki is working on ANIMAL
+# Hris and Chernev working on MAMMALS
+# Ivan and Vili are working on FISH
+# ~~Ivan is working on ANIMAL~~
 # Plamen re-implement Catalog with the new features of the project or add a new class/type of animal.

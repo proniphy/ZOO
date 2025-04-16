@@ -27,6 +27,8 @@ class Mammal : Animal, ISpeciesInfo
             "    5.3. Omnivores.";
     }
 
+    public virtual string GetDerivedSpeciesInfo() => GetSpeciesInfo();
+
     public void ShowMammalInformation()
     {
         base.ShowAnimalInformation();

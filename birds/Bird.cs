@@ -35,4 +35,6 @@ class Bird : Animal, IVocalize, ISpeciesInfo
             " - A high metabolic rate\n" +
             " - Ranging in size from tiny hummingbirds to large ostriches.";
     }
+
+    public virtual string GetDerivedSpeciesInfo() => GetSpeciesInfo();
 }

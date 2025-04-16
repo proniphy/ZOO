@@ -1,5 +1,5 @@
 
-abstract class Animal : INamed, IAdoptable, IHabitation
+public abstract class Animal : INamed, IAdoptable, IHabitation
 {
     /// <summary>
     /// The name of this animal.
@@ -37,7 +37,12 @@ abstract class Animal : INamed, IAdoptable, IHabitation
     /// <summary>
     /// The native habitat for this species of animal.
     /// </summary>
-    public HabitatTypes NativeHabitat { get; set; }
+    public virtual HabitatTypes NativeHabitat
+    {
+        get => nativeHabitat;
+        set => nativeHabitat = value;
+    }
+    protected HabitatTypes nativeHabitat;
 
     /// <summary>
     /// The date that this animal was born.
@@ -99,7 +104,7 @@ abstract class Animal : INamed, IAdoptable, IHabitation
     {
         name = "";
         adopter = null;
-        NativeHabitat = 0;  // First value of the enum (since we don't have an "Invalid" option)
+        nativeHabitat = 0;  // First value of the enum (since we don't have an "Invalid" option)
         birthDate = DateTime.Today;
         weight = 0;
         regionOfOrigin = null;
@@ -132,7 +137,7 @@ abstract class Animal : INamed, IAdoptable, IHabitation
             $"it weighs {Weight} kg and is native to the {NativeHabitat.FriendlyName()} habitat. ";
         if (!string.IsNullOrEmpty(RegionOfOrigin))
         {
-            info += $" It was captured from the region {RegionOfOrigin}. ";
+            info += $"It was captured from the region {RegionOfOrigin}. ";
         }
         return info;
     }
