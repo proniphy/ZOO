@@ -1,6 +1,6 @@
-class Bear : Omnivore
+class Fox : Omnivore
 {
-    public Bear(string name, DateTime birthDate, double weightInKg, HabitatTypes habitat, string origin,
+    public Fox(string name, DateTime birthDate, double weightInKg, HabitatTypes habitat, string origin,
         double averageBodyTemperature, string furType, string earType, string tailType,
         double foodConsumptionPerDayKg, string favouritePlantFood, string favouriteAnimalFood)
         : base(name, birthDate, weightInKg, habitat, origin, averageBodyTemperature, furType, earType, tailType,
@@ -9,7 +9,6 @@ class Bear : Omnivore
 
     public override void Vocalize()
     {
-        Console.WriteLine("The bear growls in the forest.");
+        Console.WriteLine("The fox barks softly and makes a yipping sound.");
     }
-    //
 }

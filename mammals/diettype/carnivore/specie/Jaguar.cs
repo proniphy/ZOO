@@ -1,6 +1,6 @@
-class Lion : Carnivore
+class Jaguar : Carnivore
 {
-    public Lion(string name, DateTime birthDate, double weightInKg, HabitatTypes habitat, string origin,
+    public Jaguar(string name, DateTime birthDate, double weightInKg, HabitatTypes habitat, string origin,
         double averageBodyTemperature, string furType, string earType, string tailType, 
         double meatConsumptionPerDayKg, string favouritePrey)
         : base(name, birthDate, weightInKg, habitat, origin, averageBodyTemperature, furType, earType, tailType, 
@@ -8,6 +8,7 @@ class Lion : Carnivore
     { }
     public override void Vocalize()
     {
-        Console.WriteLine($"{Name} roars with a deep, powerful, and iconic roar.");
+        Console.WriteLine($"{Name} roars deeply, a powerful and resonating sound.");
     }
+    //
 }

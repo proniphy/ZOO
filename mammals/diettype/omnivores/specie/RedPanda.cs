@@ -1,6 +1,6 @@
-class Fox : Omnivore
+class RedPanda : Omnivore
 {
-    public Fox(string name, DateTime birthDate, double weightInKg, HabitatTypes habitat, string origin,
+    public RedPanda(string name, DateTime birthDate, double weightInKg, HabitatTypes habitat, string origin,
         double averageBodyTemperature, string furType, string earType, string tailType,
         double foodConsumptionPerDayKg, string favouritePlantFood, string favouriteAnimalFood)
         : base(name, birthDate, weightInKg, habitat, origin, averageBodyTemperature, furType, earType, tailType,
@@ -9,7 +9,6 @@ class Fox : Omnivore
 
     public override void Vocalize()
     {
-        Console.WriteLine("The fox barks softly and makes a yipping sound.");
+        Console.WriteLine("The red panda makes a chattering sound.");
     }
-    //
 }
