@@ -9,15 +9,11 @@ class Program
     }
 
     static void Main()
-    {/* TODO to be fixed with new classes
+    {
         Catalog animalCatalog = new Catalog();
 
-        Mammal test = new Mammal();
-        Console.WriteLine("The test animal: ");
-        test.GetAnimalInformation();
-
-        animalCatalog.AddAnimal(new Mammal(
-            "Sealy the seal", YearsInPastFromToday(2), 80.0, HabitatTypes.Tundra
+        animalCatalog.AddAnimal(new Snake(
+            "Snakey the snake", YearsInPastFromToday(2), 80.0, HabitatTypes.Tundra, null, 0, false
         ));
         animalCatalog.AddAnimal(new Bird(
             "Polly the parrot", YearsInPastFromToday(1), 1.0, HabitatTypes.TropicalRainforest
@@ -54,7 +50,7 @@ class Program
             {
                 Console.WriteLine("Invalid choice. Please enter 1, 2, or 3.");
             }
-        } */
+        }
     }
 
     public static int GetIntInput(string message) //Function to get Int, also checks for correct input
