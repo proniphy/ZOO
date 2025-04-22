@@ -1,6 +1,9 @@
 
-// Implemented by animals that can vocalize (make sounds)
-interface IVocalize
+namespace Zoo
 {
-    public void Vocalize();
+    // Implemented by animals that can vocalize (make sounds)
+    interface IVocalize
+    {
+        public void Vocalize();
+    }
 }

@@ -1,12 +1,15 @@
 
-public interface INamed
+namespace Zoo
 {
-    public string Name { get; }
-
-    public void Rename(string newName);
-
-    public void ShowAnimalName()
+    public interface INamed
     {
-        Console.WriteLine($"This animal is named: '{Name}'");
+        public string Name { get; }
+
+        public void Rename(string newName);
+
+        public void ShowAnimalName()
+        {
+            Console.WriteLine($"This animal is named: '{Name}'");
+        }
     }
 }

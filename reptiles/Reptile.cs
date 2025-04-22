@@ -1,10 +1,10 @@
-namespace reptile
+namespace Zoo.Reptiles
 {
     internal abstract class Reptile : Animal
     {
         private int legs = 4;
-        public virtual int NumberOfLegs 
-        {   
+        public virtual int NumberOfLegs
+        {
             get{return legs;}
             set{
                 if (value < 0 || value > 4)
@@ -17,13 +17,13 @@ namespace reptile
                     legs=value;
                 }
             }
-        } 
+        }
         public bool IsColdBlooded { get; } = true;
         public bool LaysEggs { get; set; }
 
         public virtual double PreferredTemperature {get; set;} = 30.0;
-        
-        protected Reptile(string name, DateTime birthDate, double weightInKg, HabitatTypes habitat, string? origin, int numberOfLegs, bool laysEggs) 
+
+        protected Reptile(string name, DateTime birthDate, double weightInKg, HabitatTypes habitat, string? origin, int numberOfLegs, bool laysEggs)
             : base(name, birthDate, weightInKg, habitat, origin)
         {
             this.NumberOfLegs = numberOfLegs;
