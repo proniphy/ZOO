@@ -26,7 +26,7 @@ class Bird : Animal, IVocalize, ISpeciesInfo
         Console.WriteLine("Chirp, chirp!");
     }
 
-    public static string GetSpeciesInfo()
+    public static new string GetSpeciesInfo()
     {
         return "Birds are warm-blooded vertebrates generally defined by:\n" +
             " - Having bodies covered in feathers\n" +
@@ -36,5 +36,5 @@ class Bird : Animal, IVocalize, ISpeciesInfo
             " - Ranging in size from tiny hummingbirds to large ostriches.";
     }
 
-    public virtual string GetDerivedSpeciesInfo() => GetSpeciesInfo();
+    public override string GetDerivedSpeciesInfo() => GetSpeciesInfo();
 }

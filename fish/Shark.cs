@@ -32,7 +32,7 @@ public class Shark : Fish, ISpeciesInfo, IEndangered
 
     public virtual RedListCategory Endangerment { get; set; } = RedListCategory.DataDeficient;
 
-    public static string GetSpeciesInfo()
+    public static new string GetSpeciesInfo()
     {
         return """
             Sharks are ancient, cartilaginous fish with over 500 diverse species
@@ -44,5 +44,5 @@ public class Shark : Fish, ISpeciesInfo, IEndangered
             """;
     }
 
-    public virtual string GetDerivedSpeciesInfo() => GetSpeciesInfo();
+    public override string GetDerivedSpeciesInfo() => GetSpeciesInfo();
 }
