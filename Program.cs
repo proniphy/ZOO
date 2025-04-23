@@ -10,14 +10,24 @@ class Program
 
     static void Main()
     {
-        Catalog animalCatalog = new Catalog();
+        var animalCatalog = new Zoo.Catalog();
 
-        animalCatalog.AddMammal(new Mammal(
-            "Sealy the seal", YearsInPastFromToday(2), 80.0, HabitatTypes.Tundra
+        animalCatalog.AddAnimal(new Zoo.Reptiles.Snake(
+            "Snakey the snake", YearsInPastFromToday(2), 80.0, Zoo.HabitatTypes.Tundra, null, 0, false
         ));
-        animalCatalog.AddBird(new Bird(
-            "Polly the parrot", YearsInPastFromToday(1), 1.0, HabitatTypes.TropicalRainforest
+        animalCatalog.AddAnimal(new Zoo.Birds.Bird(
+            "Polly the parrot", YearsInPastFromToday(1), 1.0, Zoo.HabitatTypes.TropicalRainforest
         ));
+
+        var harry = new Zoo.Fish.GreatHammerHead();
+        harry.Name = "Harry the hammerhead";
+        harry.BirthDate = YearsInPastFromToday(5);
+        harry.Weight = 300.0;
+        harry.NativeHabitat = Zoo.HabitatTypes.OceanAndCoast;
+        harry.GillCount = 12;
+        harry.Length = 6.0;
+        harry.FinCount = 7;
+        animalCatalog.AddAnimal(harry);
 
         while (true)
         {
@@ -34,6 +44,7 @@ class Program
             {
                 animalCatalog.DisplayMammalCatalog();
                 animalCatalog.DisplayBirdCatalog();
+                animalCatalog.DisplaySharkCatalog();
             }
             else
             {
@@ -87,7 +98,7 @@ class Program
         return input;
     }
 
-    public static HabitatTypes GetHabitatInput(string prompt)
+    public static Zoo.HabitatTypes GetHabitatInput(string prompt)
     {
         string? input;
         while (true)
@@ -95,18 +106,18 @@ class Program
             Console.Write(prompt);
             input = Console.ReadLine();
             bool ignoreCase = true;
-            Enum.TryParse(typeof(HabitatTypes), input, ignoreCase, out object? result);
-            if (result is not HabitatTypes)
+            Enum.TryParse(typeof(Zoo.HabitatTypes), input, ignoreCase, out object? result);
+            if (result is not Zoo.HabitatTypes)
             {
                 Console.WriteLine("Unrecognized habitat type, the following are valid options:");
-                foreach (HabitatTypes type in Enum.GetValues<HabitatTypes>())
+                foreach (var type in Enum.GetValues<Zoo.HabitatTypes>())
                 {
                     Console.WriteLine($"  {type}");
                 }
             }
             else
             {
-                return (HabitatTypes)result;
+                return (Zoo.HabitatTypes)result;
             }
         }
     }
@@ -151,34 +162,42 @@ class Program
         return new DateTime(year, month, day);
     }
 
-    public static Catalog GetCatalog(Catalog animalCatalog)
+    public static Zoo.Catalog GetCatalog(Zoo.Catalog animalCatalog)
     {
         while (true)
         {
-            string type = GetStringInput("Enter animal type (mammal/bird/exit): ").ToLower();
+            string type = GetStringInput("Enter animal type (shark/bird/exit): ").ToLower();
 
             if (type == "exit") break;
 
             string name = GetStringInput("Enter animal's name: ");
             DateTime birthDate = GetDateInput("Enter the animal's birth date: ");
             double weight = GetDoubleInput("Enter animal's weight: ");
-            HabitatTypes habitat = GetHabitatInput("Enter the animal's habitat: ");
+            Zoo.HabitatTypes habitat = GetHabitatInput("Enter the animal's habitat: ");
             string? origin = GetOptionalString("Enter the region of origin (Optional): ");
 
-            if (type == "mammal")
+            if (type == "shark")
             {
-                Mammal mammal = new Mammal(name, birthDate, weight, habitat, origin);
-                animalCatalog.AddMammal(mammal);
+                var shark = new Zoo.Fish.Shark();
+                shark.Name = name;
+                shark.BirthDate = birthDate;
+                shark.Weight = weight;
+                shark.NativeHabitat =habitat;
+                if (origin is not null)
+                {
+                    shark.RegionOfOrigin = origin;
+                }
+                animalCatalog.AddAnimal(shark);
             }
             else if (type == "bird")
             {
                 bool flying = GetStringInput("Can the bird fly? (yes/no): ") == "yes";
-                Bird bird = new Bird(name, birthDate, weight, habitat, origin, flying);
-                animalCatalog.AddBird(bird);
+                Zoo.Birds.Bird bird = new Zoo.Birds.Bird(name, birthDate, weight, habitat, origin, flying);
+                animalCatalog.AddAnimal(bird);
             }
             else
             {
-                Console.WriteLine("Invalid type. Please enter Mammal or Bird.");
+                Console.WriteLine("Invalid type. Please enter Shark or Bird.");
             }
         }
         return animalCatalog;
