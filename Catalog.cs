@@ -1,51 +1,69 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-class Catalog
+namespace Zoo
 {
-    private List<Mammal> mammalList = new List<Mammal>();
-    private List<Bird> birdList = new List<Bird>();
-
-    public void AddMammal(Mammal mammal)
+    class Catalog
     {
-        mammalList.Add(mammal);
-    }
+        private AnimalCollection animals = new AnimalCollection();
 
-    public void AddBird(Bird bird)
-    {
-        birdList.Add(bird);
-    }
-
-    public void DisplayMammalCatalog()
-    {
-        if (mammalList.Any())
+        public void AddAnimal(Animal animal)
         {
-            Console.WriteLine("Mammal Catalog: ");
-            foreach (var mammal in mammalList)
+            animals.Add(animal);
+        }
+
+        public void DisplayMammalCatalog()
+        {
+            var mammals = animals.GetAnimalsOfType<Mammals.Mammal>();
+            if (mammals.Any())
             {
-                mammal.ShowAnimalInformation();
+                Console.WriteLine("Mammal Catalog: ");
+                Console.WriteLine(Mammals.Mammal.GetSpeciesInfo());
+                foreach (var mammal in mammals)
+                {
+                    mammal.ShowAnimalInformation();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Currently there are no mammals in this catalog.");
             }
         }
-        else
-        {
-            Console.WriteLine("Currently there are no mammals in this catalog.");
-        }
-    }
 
-    public void DisplayBirdCatalog()
-    {
-        if (birdList.Any())
+        public void DisplayBirdCatalog()
         {
-            Console.WriteLine("Bird Catalog: ");
-            Console.WriteLine(Bird.GetSpeciesInfo());
-            foreach (var bird in birdList)
+            var birds = animals.GetAnimalsOfType<Birds.Bird>();
+            if (birds.Any())
             {
-                bird.ShowBirdInformation();
+                Console.WriteLine("Bird Catalog: ");
+                Console.WriteLine(Birds.Bird.GetSpeciesInfo());
+                foreach (var bird in birds)
+                {
+                    bird.ShowBirdInformation();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Currently there are no birds in this catalog.");
             }
         }
-        else
+
+        public void DisplaySharkCatalog()
         {
-            Console.WriteLine("Currently there are no birds in this catalog.");
+            var sharks = animals.GetAnimalsOfType<Fish.Shark>();
+            if (sharks.Any())
+            {
+                Console.WriteLine("Shark Catalog: ");
+                Console.WriteLine(Fish.Shark.GetSpeciesInfo());
+                foreach (var shark in sharks)
+                {
+                    shark.ShowAnimalInformation();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Currently there are no sharks in this catalog.");
+            }
         }
     }
 }

@@ -46,9 +46,11 @@ namespace Zoo.Insects
         public abstract void MakeSound(); // From Animal
         public void Vocalize() => MakeSound();
 
-        public static string GetSpeciesInfo()
+        public static new string GetSpeciesInfo()
         {
             return "Insects are invertebrates with exoskeletons, segmented bodies, and jointed appendages.";
         }
+
+        public override string GetDerivedSpeciesInfo() => GetSpeciesInfo();
     }
 }
