@@ -44,7 +44,7 @@ namespace Zoo.Mammals
             TailType=tailType;
         }
 
-    public abstract void Vocalize();
+        public abstract void Vocalize();
 
         public override string GetAnimalClass()
         {
