@@ -1,13 +1,16 @@
-abstract class Australaves : Bird
+namespace Zoo.Birds
 {
-    public Australaves(string name, DateTime birthDate, double weightInKg,
-        HabitatTypes habitat, string? originRegion = null, bool flying = true)
-        : base(name, birthDate, weightInKg, habitat, originRegion, flying) { }
-
-    public override string BirdType => "Australaves";
-
-    public override void Identify()
+    abstract class Australaves : Bird
     {
-        Console.WriteLine("I am an Australaves!");
+        public Australaves(string name, DateTime birthDate, double weightInKg,
+            HabitatTypes habitat, string? originRegion = null, bool flying = true)
+            : base(name, birthDate, weightInKg, habitat, originRegion, flying) { }
+
+        public override string BirdType => "Australaves";
+
+        public override void Identify()
+        {
+            Console.WriteLine("I am an Australaves!");
+        }
     }
 }

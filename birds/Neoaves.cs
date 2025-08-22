@@ -1,15 +1,18 @@
-abstract class Neoaves : Bird
+namespace Zoo.Birds
 {
-    protected Neoaves(string name, DateTime birthDate, double weightInKg,
-        HabitatTypes habitat, string? originRegion = null, bool flying = true)
-        : base(name, birthDate, weightInKg, habitat, originRegion, flying) { }
-
-    public override string BirdType => "Neoaves";
-
-    public virtual void DisplayFamily()
+    abstract class Neoaves : Bird
     {
-        Console.WriteLine("Family: Neoaves");
-    }
+        protected Neoaves(string name, DateTime birthDate, double weightInKg,
+            HabitatTypes habitat, string? originRegion = null, bool flying = true)
+            : base(name, birthDate, weightInKg, habitat, originRegion, flying) { }
 
-    public abstract void UniqueFeature();
+        public override string BirdType => "Neoaves";
+
+        public virtual void DisplayFamily()
+        {
+            Console.WriteLine("Family: Neoaves");
+        }
+
+        public abstract void UniqueFeature();
+    }
 }
