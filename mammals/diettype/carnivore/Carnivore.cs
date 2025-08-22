@@ -1,0 +1,39 @@
+namespace Zoo.Mammals
+{
+    class Carnivore : Mammal
+    {
+        public double MeatConsumptionPerDayKg { get; set; }
+
+        public string FavouritePrey { get; set; }
+        public override void Vocalize() { }
+
+        public Carnivore() : base()
+        {
+            MeatConsumptionPerDayKg = 1.0;
+            FavouritePrey = "Deer";
+        }
+
+        public Carnivore(string name, DateTime birthDate, double weightInKg, HabitatTypes habitat, string origin,
+            double averageBodyTemperature, string furType, string earType, string tailType,
+            double meatConsumptionPerDayKg, string favouritePrey)
+            : base(name, birthDate, weightInKg, habitat, origin, averageBodyTemperature, furType, earType, tailType)
+        {
+            MeatConsumptionPerDayKg = meatConsumptionPerDayKg;
+            FavouritePrey = favouritePrey;
+        }
+
+        public override string GetAnimalClass()
+        {
+            return "Carnivore mammal";
+        }
+
+        public override string GetAnimalInformation()
+        {
+            string baseInfo = base.GetAnimalInformation();
+            baseInfo += $"\nThis carnivore prefers {FavouritePrey.ToLower()} as prey,";
+            baseInfo += $" and typically eats about {MeatConsumptionPerDayKg} kg of meat daily.";
+            return baseInfo;
+        }
+        //
+    }
+}
