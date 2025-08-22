@@ -3,14 +3,18 @@ namespace Zoo.Birds
 {
     class Bird : Animal, IVocalize, ISpeciesInfo
     {
+        public virtual string BirdType { get; protected set; }
         public bool Flying { get; protected set; }
-
 
         public Bird(string name, DateTime birthDate, double weightInKg,
             HabitatTypes habitat, string? originRegion = null, bool flying = true)
             : base(name, birthDate, weightInKg, habitat, originRegion)
         {
             Flying = flying;
+        }
+        public virtual void Identify()
+        {
+            Console.WriteLine($"I am a {BirdType}!");
         }
 
         public override string GetAnimalInformation()
